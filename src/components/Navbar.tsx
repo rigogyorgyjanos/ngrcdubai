@@ -3,6 +3,9 @@
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import logo from "../assets/logo.png"
+import { motion, AnimatePresence } from 'framer-motion';
+
+
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
 
@@ -50,20 +53,29 @@ const Navbar = () => {
             </div>
 
             {/* Mobile Dropdown Menu */}
-            {isOpen && (
-                <nav className="md:hidden bg-[#0A1E3F] px-4 pb-4">
-                    {navItems.map((item) => (
-                        <a
-                            key={item.href}
-                            href={item.href}
-                            onClick={() => setIsOpen(false)}
-                            className="block py-2 text-white hover:text-[#D6AF65] transition"
-                        >
-                            {item.label}
-                        </a>
-                    ))}
-                </nav>
-            )}
+            <AnimatePresence>
+                {isOpen && (
+                    <motion.nav
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: '100vh', opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.6, ease: 'easeInOut' }}
+                        className="md:hidden bg-[#0A1E3F]  overflow-hidden flex flex-col gap-5 pt-5"
+                    >
+                        {navItems.map((item, index) => (
+                            <a
+                                key={item.href}
+                                href={item.href}
+                                onClick={() => setIsOpen(false)}
+                                className={`text-white px-4 pb-4 ${index !== navItems.length - 1 ? 'border-b border-[#D6AF65]' : ''
+                                    }`}
+                            >
+                                {item.label}
+                            </a>
+                        ))}
+                    </motion.nav>
+                )}
+            </AnimatePresence>
         </header>
     );
 };
