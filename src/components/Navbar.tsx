@@ -1,12 +1,15 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { Menu, X } from 'lucide-react';
 import logo from "../assets/logo.png"
 import { motion, AnimatePresence } from 'framer-motion';
 
+interface NavbarProps {
+    logoRef: React.RefObject<HTMLImageElement | null>;
+}
 
-const Navbar = () => {
+const Navbar = ({ logoRef }: NavbarProps) => {
     const [isOpen, setIsOpen] = useState(false);
 
     const toggleMenu = () => setIsOpen(!isOpen);
@@ -24,11 +27,11 @@ const Navbar = () => {
 
                 {/* Logo or Brand Name */}
                 <div className='flex flex-row gap-3 items-center '>
-                    <img src={logo} alt="" className='h-12' />
+                    {/* ide tesszük a ref-et */}
+                    <img ref={logoRef} src={logo} alt="NGRC Logo" className='h-12' />
                     <a href="#" className="text-2xl font-bold text-[#D6AF65]">
                         NGRC
                     </a>
-
                 </div>
 
                 {/* Desktop Navigation */}

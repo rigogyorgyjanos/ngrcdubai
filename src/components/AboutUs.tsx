@@ -42,18 +42,18 @@ const AboutUs = () => {
 
 
                     <motion.div
-                        className="md:w-1/2"
+                        className="rounded-lg"
                         initial={{ opacity: 0, x: 80 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
                         viewport={{ once: false }}
-                        style={{ overflowX: 'hidden' }}
+                        style={{ overflow: 'hidden' }}
 
                     >
                         <img
                             src={kep}
                             alt="Luxury home interior Dubai"
-                            className="w-full h-auto rounded-lg shadow-lg object-cover"
+                            className="w-full h-auto rounded-lg shadow-lg object-cover hover:scale-110 "
                         />
                     </motion.div>
 

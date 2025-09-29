@@ -6,12 +6,19 @@ import OwnersInvestors from "./components/OwnersInvestors"
 import Portfolio from "./components/Portfolio"
 import Services from "./components/Services"
 import Testimonials from "./components/Testimonials"
+import Preloader from './components/Preloader';
+import { useRef, useState } from "react"
 
 function App() {
+  const logoRef = useRef<HTMLImageElement>(null);
+
+  const [loading, setLoading] = useState(true);
+
 
   return (
     <>
-      <Navbar />
+      {/* {loading && <Preloader navLogoRef={logoRef} onFinish={() => setLoading(false)} />} */}
+      <Navbar logoRef={logoRef} />
       <main>
         <section id="hero">
           <Hero />
