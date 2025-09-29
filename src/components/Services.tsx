@@ -21,6 +21,8 @@ const Services = () => {
                         whileInView={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.8, ease: 'easeInOut' }}
                         viewport={{ once: false }}
+                        style={{ overflowX: 'hidden' }}
+
                     >
                         <h3 className="text-2xl font-semibold text-[#0A1E3F] mb-4">Cleaning Services</h3>
                         <p className="text-gray-700 mb-6">
@@ -38,25 +40,29 @@ const Services = () => {
                     </motion.div>
 
                     {/* Karbantartás - jobbról balra */}
-                    <motion.div
-                        className="bg-[#F9FAFB] p-8 rounded-lg shadow hover:shadow-lg transition"
-                        initial={{ opacity: 0, x: 80 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.8, ease: 'easeInOut' }}
-                        viewport={{ once: false }}
-                    >
-                        <h3 className="text-2xl font-semibold text-[#0A1E3F] mb-4">Full Property Maintenance</h3>
-                        <p className="text-gray-700 mb-6">
-                            We proactively inspect and maintain all properties — avoiding costly repairs, and giving owners peace of mind.
-                            Fast issue resolution, regular checkups, and professional upkeep prevent wear and tear before it starts.
-                        </p>
-                        <a
-                            href="#contact"
-                            className="mt-6 inline-block text-[#0A1E3F] font-semibold border-b-2 border-[#D6AF65] hover:text-[#D6AF65] transition"
+                    <div style={{ overflowX: 'hidden' }}>
+                        <motion.div
+                            className="bg-[#F9FAFB] p-8 rounded-lg shadow hover:shadow-lg transition"
+                            initial={{ opacity: 0, x: 80 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            transition={{ duration: 0.8, ease: 'easeInOut' }}
+                            viewport={{ once: false }}
+                            style={{ overflowX: 'hidden' }}
+
                         >
-                            Learn more →
-                        </a>
-                    </motion.div>
+                            <h3 className="text-2xl font-semibold text-[#0A1E3F] mb-4">Full Property Maintenance</h3>
+                            <p className="text-gray-700 mb-6">
+                                We proactively inspect and maintain all properties — avoiding costly repairs, and giving owners peace of mind.
+                                Fast issue resolution, regular checkups, and professional upkeep prevent wear and tear before it starts.
+                            </p>
+                            <a
+                                href="#contact"
+                                className="mt-6 inline-block text-[#0A1E3F] font-semibold border-b-2 border-[#D6AF65] hover:text-[#D6AF65] transition"
+                            >
+                                Learn more →
+                            </a>
+                        </motion.div>
+                    </div>
                 </div>
             </div>
         </section>

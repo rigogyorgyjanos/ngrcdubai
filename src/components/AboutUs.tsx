@@ -38,20 +38,26 @@ const AboutUs = () => {
                 </motion.div>
 
                 {/* Kép rész - animációval jobbról balra */}
-                <motion.div
-                    className="md:w-1/2"
-                    initial={{ opacity: 0, x: 80 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
-                    viewport={{ once: false }}
-                >
-                    <img
-                        src={kep}
-                        alt="Luxury home interior Dubai"
-                        className="w-full h-auto rounded-lg shadow-lg object-cover"
-                    />
-                </motion.div>
+                <div style={{ overflowX: 'hidden' }}>
 
+
+                    <motion.div
+                        className="md:w-1/2"
+                        initial={{ opacity: 0, x: 80 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
+                        viewport={{ once: false }}
+                        style={{ overflowX: 'hidden' }}
+
+                    >
+                        <img
+                            src={kep}
+                            alt="Luxury home interior Dubai"
+                            className="w-full h-auto rounded-lg shadow-lg object-cover"
+                        />
+                    </motion.div>
+
+                </div>
             </div>
         </section>
     );
